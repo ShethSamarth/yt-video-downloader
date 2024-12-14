@@ -56,6 +56,32 @@ export const features = [
   }
 ]
 
+export const steps = [
+  {
+    number: 1,
+    title: "Copy YouTube URL",
+    description:
+      "Find the video you want to download and copy its URL from the address bar."
+  },
+  {
+    number: 2,
+    title: "Paste URL",
+    description: "Paste the copied URL into the input field on our website."
+  },
+  {
+    number: 3,
+    title: "Choose Format",
+    description:
+      "Select your preferred video quality and format for the download."
+  },
+  {
+    number: 4,
+    title: "Download",
+    description:
+      "Click the download button and wait for your video to be ready."
+  }
+]
+
 export const policyLinks = [
   {
     id: 1,
