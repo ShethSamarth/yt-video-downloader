@@ -82,6 +82,31 @@ export const steps = [
   }
 ]
 
+export const plans = [
+  {
+    id: 1,
+    name: "Basic",
+    price: "Free",
+    features: [
+      "Unlimited downloads",
+      "Basic support",
+      "Access to MP4 and WebM formats",
+      "Limited download speed"
+    ]
+  },
+  {
+    id: 2,
+    name: "Premium",
+    price: "$19.99/month",
+    features: [
+      "Unlimited downloads",
+      "No ads",
+      "Priority support",
+      "Batch download option"
+    ]
+  }
+]
+
 export const faqs = [
   {
     id: 1,
