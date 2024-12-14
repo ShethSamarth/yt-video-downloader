@@ -1,3 +1,5 @@
+import { Download, Shield, Video, Zap } from "lucide-react"
+
 export const name = "YT Video Downloader"
 
 export const navigations = [
@@ -20,6 +22,37 @@ export const navigations = [
     id: 4,
     href: "#faq",
     label: "FAQ"
+  }
+]
+
+export const features = [
+  {
+    id: 1,
+    icon: Download,
+    title: "Easy Downloads",
+    description:
+      "Simply paste the YouTube URL and download your video in seconds."
+  },
+  {
+    id: 2,
+    icon: Zap,
+    title: "Lightning Fast",
+    description:
+      "Our optimized servers ensure the fastest download speeds possible."
+  },
+  {
+    id: 3,
+    icon: Shield,
+    title: "Secure & Private",
+    description:
+      "Your downloads are always secure and your data is never shared."
+  },
+  {
+    id: 4,
+    icon: Video,
+    title: "Multiple Formats",
+    description:
+      "Choose from various video and audio formats to suit your needs."
   }
 ]
 
