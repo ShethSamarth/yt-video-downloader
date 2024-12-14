@@ -82,6 +82,39 @@ export const steps = [
   }
 ]
 
+export const faqs = [
+  {
+    id: 1,
+    question: "Is it legal to download YouTube videos?",
+    answer:
+      "Downloading YouTube videos for personal use is generally acceptable. However, distributing or using copyrighted content without permission may be illegal. Always respect copyright laws and YouTube's terms of service."
+  },
+  {
+    id: 2,
+    question: "What video formats are available?",
+    answer:
+      "We offer downloads in various formats including MP4, WebM, and MP3 for audio-only downloads. The available formats may depend on the original video quality and your subscription plan."
+  },
+  {
+    id: 3,
+    question: "How fast are the downloads?",
+    answer:
+      "Download speeds depend on various factors including your internet connection, server load, and the size of the video. We optimize our servers for the fastest possible downloads."
+  },
+  {
+    id: 4,
+    question: "Can I download entire playlists?",
+    answer:
+      "Yes, with our Pro and Business plans, you can download entire playlists. The Basic plan is limited to individual video downloads."
+  },
+  {
+    id: 5,
+    question: "Is my personal information safe?",
+    answer:
+      "We take your privacy seriously. We use industry-standard encryption and never share your personal information with third parties. Please refer to our Privacy Policy for more details."
+  }
+]
+
 export const policyLinks = [
   {
     id: 1,

@@ -1,3 +1,4 @@
+import { FAQ } from "@/components/faq"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Features } from "@/components/features"
@@ -11,6 +12,7 @@ const Home = () => {
       <main>
         <Features />
         <HowItWorks />
+        <FAQ />
       </main>
 
       <Footer />
