@@ -1,8 +1,11 @@
 import type { Metadata } from "next"
+import { Outfit } from "next/font/google"
 
 import { ThemeProvider } from "@/components/theme-provider"
 
 import "./globals.css"
+
+const outfit = Outfit({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "YT Video Downloader",
@@ -13,7 +16,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={outfit.className}>
         <ThemeProvider
           enableSystem
           attribute="class"
