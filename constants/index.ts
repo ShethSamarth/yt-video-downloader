@@ -105,13 +105,13 @@ export const faqs = [
     id: 4,
     question: "Can I download entire playlists?",
     answer:
-      "Yes, with our Pro and Business plans, you can download entire playlists. The Basic plan is limited to individual video downloads."
+      "Yes, with our Premium plan, you can download entire playlists. The Normal plan is limited to individual video downloads."
   },
   {
     id: 5,
-    question: "Is my personal information safe?",
+    question: "Do you offer any batch download options?",
     answer:
-      "We take your privacy seriously. We use industry-standard encryption and never share your personal information with third parties. Please refer to our Privacy Policy for more details."
+      "Yes, with the Premium plan, you can download multiple videos at once, which is ideal for users who need to download large collections of content quickly."
   }
 ]
 
