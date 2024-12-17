@@ -1,4 +1,5 @@
 import { FAQ } from "@/components/faq"
+import { Hero } from "@/components/hero"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Pricing } from "@/components/pricing"
@@ -11,6 +12,7 @@ const Home = () => {
       <Navbar />
 
       <main>
+        <Hero />
         <Features />
         <HowItWorks />
         <Pricing />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Outfit } from "next/font/google"
 
+import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
 
 import "./globals.css"
@@ -26,6 +27,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         >
           {children}
         </ThemeProvider>
+
+        <Toaster richColors theme="light" position="top-center" />
       </body>
     </html>
   )
