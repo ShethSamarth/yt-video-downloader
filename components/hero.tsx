@@ -2,7 +2,7 @@
 
 import axios from "axios"
 import { toast } from "sonner"
-import { useState } from "react"
+import { KeyboardEvent, useState } from "react"
 import { Clipboard, Loader } from "lucide-react"
 
 import { Input } from "@/components/ui/input"
@@ -21,6 +21,12 @@ export const Hero = () => {
     setUrl(data)
   }
 
+  const onKeyDown = async (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      await handleSubmit()
+    }
+  }
+
   const handleSubmit = async () => {
     if (url === "") {
       setError("Enter a URL.")
@@ -34,14 +40,13 @@ export const Hero = () => {
 
     try {
       setLoading(true)
-      toast.success("Successfully downloaded video!")
 
       const videoDetails = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/get_video_details`,
         { url }
       )
 
-      setData(videoDetails.data)
+      setData({ ...videoDetails.data, url })
     } catch {
       toast.error("Failed to fetch video details!", {
         description: "Try again with some other URL."
@@ -69,6 +74,7 @@ export const Hero = () => {
             <Input
               type="url"
               value={url}
+              onKeyDown={onKeyDown}
               placeholder="Paste YouTube URL here"
               onChange={(e) => setUrl(e.target.value)}
               className="flex-grow bg-white pr-12 text-black dark:bg-gray-800 dark:text-white"
@@ -97,7 +103,7 @@ export const Hero = () => {
           </Button>
         </div>
 
-        {data && <VideoPreview data={data} url={url} />}
+        {data && <VideoPreview data={data} />}
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 "use client"
 
+import axios from "axios"
 import Image from "next/image"
 import { toast } from "sonner"
 import { useState } from "react"
@@ -17,26 +18,44 @@ import { filterFormats, formatViews, getDateDifference } from "@/lib/utils"
 
 interface VideoPreviewProps {
   data: VideoDetails
-  url: string
 }
 
-export const VideoPreview = ({ data, url }: VideoPreviewProps) => {
+export const VideoPreview = ({ data }: VideoPreviewProps) => {
   const [loading, setLoading] = useState<boolean>(false)
   const [selectedQuality, setSelectedQuality] = useState<string>()
 
   const filteredFormats = filterFormats(data.formats)
 
   const handleOpenUrl = () => {
-    window.open(url, "_blank", "noopener,noreferrer")
+    window.open(data.url, "_blank", "noopener,noreferrer")
   }
 
-  //   TODO: Complete the download function
-  const handleDownload = () => {
+  const handleDownload = async (url: string) => {
     setLoading(true)
 
     try {
       const resolution = selectedQuality?.replace("p", "")
-      console.log(resolution)
+
+      const videoData = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/download-video`,
+        { url, resolution }
+      )
+
+      const fileName = videoData.data.file_name
+
+      const video = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/get_video/${fileName}`,
+        { responseType: "blob" }
+      )
+
+      const fileURL = window.URL.createObjectURL(new Blob([video.data]))
+      const fileLink = document.createElement("a")
+
+      fileLink.href = fileURL
+      fileLink.setAttribute("download", fileName)
+      document.body.appendChild(fileLink)
+      fileLink.click()
+      fileLink.remove()
 
       toast.success("Successfully downloaded video!")
     } catch {
@@ -91,6 +110,7 @@ export const VideoPreview = ({ data, url }: VideoPreviewProps) => {
           <div className="flex flex-col items-center gap-4 sm:flex-row">
             <div className="w-full sm:w-auto">
               <Select
+                disabled={loading}
                 value={selectedQuality}
                 onValueChange={setSelectedQuality}
               >
@@ -112,9 +132,9 @@ export const VideoPreview = ({ data, url }: VideoPreviewProps) => {
 
             {selectedQuality && (
               <Button
-                onClick={handleDownload}
                 className="w-full sm:w-auto"
                 disabled={!selectedQuality || loading}
+                onClick={() => handleDownload(data.url)}
               >
                 {loading ? (
                   <Loader className="mr-2 size-4 animate-spin" />

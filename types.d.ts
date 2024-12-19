@@ -1,4 +1,5 @@
 interface VideoDetails {
+  url: string
   channel: string
   description: string
   formats: Format[]
