@@ -2,6 +2,11 @@
   "name": "yt-video-downloader",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Samarth Sheth",
+    "email": "samarth.sheth.29@gmail.com",
+    "url": "https://github.com/ShethSamarth"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

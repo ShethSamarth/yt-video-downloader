@@ -11,7 +11,24 @@ const outfit = Outfit({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "YT Video Downloader",
   description:
-    "Fast, simple, and reliable YouTube video downloads for all your needs."
+    "Fast, simple, and reliable YouTube video downloads for all your needs. Enjoy seamless MP4 downloads with our high-quality video downloader, designed for speed, efficiency, and exceptional performance.",
+  keywords: [
+    "YouTube video downloader",
+    "download YouTube videos",
+    "high-quality video downloader",
+    "free YouTube downloader",
+    "1080p video download",
+    "720p YouTube downloader",
+    "video downloader app",
+    "YouTube to MP4",
+    "online video downloader",
+    "custom video formats",
+    "fast YouTube downloader",
+    "video resolution selector",
+    "YouTube MP4 converter",
+    "video streaming and downloading",
+    "yt-dlp downloader"
+  ]
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
